@@ -21,6 +21,11 @@ class DoublyLinkedList {
   }
 
   prepend(value) {
+    if (this.head === null) {
+      this.head = new Node(value, null, this.head);
+      this.tail = this.head;
+      return;
+    }
     this.head.prev = new Node(value, null, this.head);
     this.head = this.head.prev;
   }
